@@ -41,11 +41,11 @@ postfix::services:
   anvil/unix:
     chroot: y
     command: anvil
-    process_limit: 1
+    limit: 1
   bounce/unix:
     chroot: y
     command: bounce
-    process_limit: 0
+    limit: 0
   bsmtp/unix:
     chroot: n
     command: pipe flags=Fq. user=bsmtp argv=/usr/lib/bsmtp/bsmtp -t$nexthop -f$sender $recipient
@@ -54,11 +54,11 @@ postfix::services:
     chroot: y
     command: cleanup
     private: n
-    process_limit: 0
+    limit: 0
   defer/unix:
     chroot: y
     command: bounce
-    process_limit: 0
+    limit: 0
   discard/unix:
     chroot: y
     command: discard
@@ -69,7 +69,7 @@ postfix::services:
     chroot: y
     command: flush
     private: n
-    process_limit: 0
+    limit: 0
     wakeup: 1000?
   ifmail/unix:
     chroot: n
@@ -94,25 +94,25 @@ postfix::services:
     chroot: y
     command: pickup
     private: n
-    process_limit: 1
+    limit: 1
     wakeup: 60
   postlog/unix-dgram:
     chroot: n
     command: postlogd
     private: n
-    process_limit: 1
+    limit: 1
   proxymap/unix:
     chroot: n
     command: proxymap
   proxywrite/unix:
     chroot: n
     command: proxymap
-    process_limit: 1
+    limit: 1
   qmgr/unix:
     chroot: n
     command: qmgr
     private: n
-    process_limit: 1
+    limit: 1
     wakeup: 300
   relay/unix:
     chroot: y
@@ -126,11 +126,11 @@ postfix::services:
   scache/unix:
     chroot: y
     command: scache
-    process_limit: 1
+    limit: 1
   scalemail-backend/unix:
     chroot: n
     command: 'pipe flags=R user=scalemail argv=/usr/lib/scalemail/bin/scalemail-store ${nexthop} ${user} ${extension}'
-    process_limit: 2
+    limit: 2
     unprivileged: n
   showq/unix:
     chroot: y
@@ -146,12 +146,12 @@ postfix::services:
   tlsmgr/unix:
     chroot: y
     command: tlsmgr
-    process_limit: 1
+    limit: 1
     wakeup: 1000?
   trace/unix:
     chroot: y
     command: bounce
-    process_limit: 0
+    limit: 0
   uucp/unix:
     chroot: n
     command: 'pipe flags=Fqhu user=uucp argv=uux -r -n -z -a$sender - $nexthop!rmail ($recipient)'
@@ -159,7 +159,7 @@ postfix::services:
   verify/unix:
     chroot: y
     command: verify
-    process_limit: 1
+    limit: 1
   virtual/unix:
     chroot: n
     command: virtual

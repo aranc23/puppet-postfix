@@ -13,6 +13,7 @@ while(<>) {
         #warn $service,$key,$value;
         next if $key eq 'type';
         next if $key eq 'service';
+        $key = 'limit' if $key eq 'process_limit';
         $services{$service}{$key} = $value unless $value eq '-';
     }
 
