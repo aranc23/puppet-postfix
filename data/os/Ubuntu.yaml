@@ -11,7 +11,7 @@ postfix::compatibility_level: '3.6'
 #postfix::data_directory: '/var/lib/postfix'
 #postfix::debug_peer_level: '2'
 #postfix::debugger_command: 'PATH=/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin ddd $daemon_directory/$process_name $process_id & sleep 5'
-#postfix::default_database_type: 'hash'
+postfix::default_database_type: 'hash'
 #postfix::html_directory: "/usr/share/doc/postfix/html"
 #postfix::inet_interfaces:
 #  - 'localhost'
