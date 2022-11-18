@@ -1,21 +1,21 @@
 ---
-rdbduprunner::alias_maps:
+postfix::alias_maps:
   - hash:/etc/aliases
-rdbduprunner::compatibility_level: 3.6
-rdbduprunner::debugger_command: PATH=/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin ddd $daemon_directory/$process_name $process_id & sleep 5
-rdbduprunner::inet_interfaces: localhost
-rdbduprunner::mailq_path: /usr/bin/mailq.postfix
-rdbduprunner::manpage_directory: /usr/share/man
-rdbduprunner::newaliases_path: /usr/bin/newaliases.postfix
-rdbduprunner::readme_directory: /usr/share/doc/postfix/README_FILES
-rdbduprunner::sample_directory: /usr/share/doc/postfix/samples
-rdbduprunner::sendmail_path: /usr/sbin/sendmail.postfix
-rdbduprunner::smtp_tls_CAfile: /etc/pki/tls/certs/ca-bundle.crt
-rdbduprunner::smtp_tls_CApath: /etc/pki/tls/certs
-rdbduprunner::smtp_tls_security_level: may
-rdbduprunner::smtpd_tls_cert_file: /etc/pki/tls/certs/postfix.pem
-rdbduprunner::smtpd_tls_key_file: /etc/pki/tls/private/postfix.key
-rdbduprunner::smtpd_tls_security_level: may
+postfix::compatibility_level: 3.6
+postfix::debugger_command: PATH=/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin ddd $daemon_directory/$process_name $process_id & sleep 5
+postfix::inet_interfaces: localhost
+postfix::mailq_path: /usr/bin/mailq.postfix
+postfix::manpage_directory: /usr/share/man
+postfix::newaliases_path: /usr/bin/newaliases.postfix
+postfix::readme_directory: /usr/share/doc/postfix/README_FILES
+postfix::sample_directory: /usr/share/doc/postfix/samples
+postfix::sendmail_path: /usr/sbin/sendmail.postfix
+postfix::smtp_tls_CAfile: /etc/pki/tls/certs/ca-bundle.crt
+postfix::smtp_tls_CApath: /etc/pki/tls/certs
+postfix::smtp_tls_security_level: may
+postfix::smtpd_tls_cert_file: /etc/pki/tls/certs/postfix.pem
+postfix::smtpd_tls_key_file: /etc/pki/tls/private/postfix.key
+postfix::smtpd_tls_security_level: may
 postfix::services:
   anvil/unix:
     chroot: n
