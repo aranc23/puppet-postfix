@@ -858,7 +858,7 @@ class postfix (
   Optional[String]                    $debug_peer_level,
   Optional[Array[String, 1]]          $debug_peer_list,
   Optional[String]                    $debugger_command,
-  Postfix::Type::Lookup::Database     $default_database_type,
+  Optional[Postfix::Type::Lookup::Database] $default_database_type,
   Optional[String]                    $default_delivery_slot_cost,
   Optional[String]                    $default_delivery_slot_discount,
   Optional[String]                    $default_delivery_slot_loan,
