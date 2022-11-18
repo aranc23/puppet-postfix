@@ -3,7 +3,7 @@ rdbduprunner::alias_maps:
   - hash:/etc/aliases
 rdbduprunner::append_dot_mydomain: no
 rdbduprunner::biff: no
-rdbduprunner::compatibility_level: 2
+rdbduprunner::compatibility_level: 3.6
 rdbduprunner::mailbox_size_limit: 0
 rdbduprunner::myorigin: /etc/mailname
 rdbduprunner::readme_directory: no

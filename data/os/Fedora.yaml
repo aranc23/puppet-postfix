@@ -1,7 +1,7 @@
 ---
 rdbduprunner::alias_maps:
   - hash:/etc/aliases
-rdbduprunner::compatibility_level: 2
+rdbduprunner::compatibility_level: 3.6
 rdbduprunner::debugger_command: PATH=/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin ddd $daemon_directory/$process_name $process_id & sleep 5
 rdbduprunner::inet_interfaces: localhost
 rdbduprunner::mailq_path: /usr/bin/mailq.postfix
