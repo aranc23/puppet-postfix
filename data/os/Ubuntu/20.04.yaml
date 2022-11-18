@@ -3,7 +3,7 @@ rdbduprunner::alias_maps:
   - hash:/etc/aliases
 rdbduprunner::append_dot_mydomain: no
 rdbduprunner::biff: no
-rdbduprunner::compatibility_level: 3.6
+rdbduprunner::compatibility_level: 2
 rdbduprunner::mailbox_size_limit: 0
 rdbduprunner::myorigin: /etc/mailname
 rdbduprunner::readme_directory: no
@@ -63,11 +63,11 @@ postfix::services:
     unprivileged: n
   maildrop/unix:
     chroot: n
-    command: 'pipe flags=DRXhu user=vmail argv=/usr/bin/maildrop -d ${recipient}'
+    command: 'pipe flags=DRhu user=vmail argv=/usr/bin/maildrop -d ${recipient}'
     unprivileged: n
   mailman/unix:
     chroot: n
-    command: 'pipe flags=FRX user=list argv=/usr/lib/mailman/bin/postfix-to-mailman.py ${nexthop} ${user}'
+    command: 'pipe flags=FR user=list argv=/usr/lib/mailman/bin/postfix-to-mailman.py ${nexthop} ${user}'
     unprivileged: n
   pickup/unix:
     chroot: y

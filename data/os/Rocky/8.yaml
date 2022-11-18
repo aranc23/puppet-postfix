@@ -1,0 +1,120 @@
+---
+rdbduprunner::alias_maps:
+  - hash:/etc/aliases
+rdbduprunner::compatibility_level: 2
+rdbduprunner::debugger_command: PATH=/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin ddd $daemon_directory/$process_name $process_id & sleep 5
+rdbduprunner::inet_interfaces: localhost
+rdbduprunner::mailq_path: /usr/bin/mailq.postfix
+rdbduprunner::manpage_directory: /usr/share/man
+rdbduprunner::newaliases_path: /usr/bin/newaliases.postfix
+rdbduprunner::readme_directory: /usr/share/doc/postfix/README_FILES
+rdbduprunner::sample_directory: /usr/share/doc/postfix/samples
+rdbduprunner::sendmail_path: /usr/sbin/sendmail.postfix
+rdbduprunner::smtp_tls_CAfile: /etc/pki/tls/certs/ca-bundle.crt
+rdbduprunner::smtp_tls_CApath: /etc/pki/tls/certs
+rdbduprunner::smtp_tls_security_level: may
+rdbduprunner::smtpd_tls_cert_file: /etc/pki/tls/certs/postfix.pem
+rdbduprunner::smtpd_tls_key_file: /etc/pki/tls/private/postfix.key
+rdbduprunner::smtpd_tls_security_level: may
+postfix::services:
+  anvil/unix:
+    chroot: n
+    command: anvil
+    limit: 1
+  bounce/unix:
+    chroot: n
+    command: bounce
+    limit: 0
+  cleanup/unix:
+    chroot: n
+    command: cleanup
+    limit: 0
+    private: n
+  defer/unix:
+    chroot: n
+    command: bounce
+    limit: 0
+  discard/unix:
+    chroot: n
+    command: discard
+  error/unix:
+    chroot: n
+    command: error
+  flush/unix:
+    chroot: n
+    command: flush
+    limit: 0
+    private: n
+    wakeup: 1000?
+  lmtp/unix:
+    chroot: n
+    command: lmtp
+  local/unix:
+    chroot: n
+    command: local
+    unprivileged: n
+  pickup/unix:
+    chroot: n
+    command: pickup
+    limit: 1
+    private: n
+    wakeup: 60
+  postlog/unix-dgram:
+    chroot: n
+    command: postlogd
+    limit: 1
+    private: n
+  proxymap/unix:
+    chroot: n
+    command: proxymap
+  proxywrite/unix:
+    chroot: n
+    command: proxymap
+    limit: 1
+  qmgr/unix:
+    chroot: n
+    command: qmgr
+    limit: 1
+    private: n
+    wakeup: 300
+  relay/unix:
+    chroot: n
+    command: smtp -o syslog_name=postfix/$service_name
+  retry/unix:
+    chroot: n
+    command: error
+  rewrite/unix:
+    chroot: n
+    command: trivial-rewrite
+  scache/unix:
+    chroot: n
+    command: scache
+    limit: 1
+  showq/unix:
+    chroot: n
+    command: showq
+    private: n
+  smtp/inet:
+    chroot: n
+    command: smtpd
+    private: n
+  smtp/unix:
+    chroot: n
+    command: smtp
+  tlsmgr/unix:
+    chroot: n
+    command: tlsmgr
+    limit: 1
+    wakeup: 1000?
+  trace/unix:
+    chroot: n
+    command: bounce
+    limit: 0
+  verify/unix:
+    chroot: n
+    command: verify
+    limit: 1
+  virtual/unix:
+    chroot: n
+    command: virtual
+    unprivileged: n
