@@ -1,0 +1,21 @@
+#! /usr/bin/perl
+
+use strict;
+use warnings;
+use YAML;
+use Data::Dumper;
+
+
+my %services;
+while(<>) {
+    if( my($service, $key, $value)
+        = m{^( .+? [/] .+? ) [/] (.+?) \s+ [=] \s+ (.+?)$}xms ) {
+        #warn $service,$key,$value;
+        next if $key eq 'type';
+        next if $key eq 'service';
+        $services{$service}{$key} = $value unless $value eq '-';
+    }
+
+}
+print YAML::Dump {'postfix::services' => \%services };
+
