@@ -3,16 +3,14 @@ postfix::alias_maps:
   - hash:/etc/aliases
 postfix::append_dot_mydomain: no
 postfix::biff: no
-postfix::compatibility_level: 2
-postfix::mailbox_size_limit: 0
+postfix::compatibility_level: '2'
+postfix::mailbox_size_limit: '0'
 postfix::myorigin: /etc/mailname
 postfix::readme_directory: no
 postfix::recipient_delimiter: +
 postfix::smtp_tls_CApath: /etc/ssl/certs
 postfix::smtp_tls_security_level: may
 postfix::smtp_tls_session_cache_database: 'btree:${data_directory}/smtp_scache'
-postfix::smtpd_banner: $myhostname ESMTP $mail_name (Ubuntu)
-postfix::smtpd_relay_restrictions: permit_mynetworks permit_sasl_authenticated defer_unauth_destination
 postfix::smtpd_tls_cert_file: /etc/ssl/certs/ssl-cert-snakeoil.pem
 postfix::smtpd_tls_key_file: /etc/ssl/private/ssl-cert-snakeoil.key
 postfix::smtpd_tls_security_level: may
