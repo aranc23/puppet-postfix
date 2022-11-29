@@ -1,13 +1,13 @@
 ---
+postfix::alias_database: ~
 postfix::alias_maps:
   - hash:/etc/aliases
+postfix::command_directory: ~
 postfix::debugger_command: PATH=/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin ddd $daemon_directory/$process_name $process_id & sleep 5
 postfix::inet_interfaces: localhost
 postfix::mailq_path: /usr/bin/mailq.postfix
 postfix::manpage_directory: /usr/share/man
 postfix::newaliases_path: /usr/bin/newaliases.postfix
-postfix::readme_directory: /usr/share/doc/postfix/README_FILES
-postfix::sample_directory: /usr/share/doc/postfix/samples
 postfix::sendmail_path: /usr/sbin/sendmail.postfix
 postfix::smtp_tls_CAfile: /etc/pki/tls/certs/ca-bundle.crt
 postfix::smtp_tls_CApath: /etc/pki/tls/certs
