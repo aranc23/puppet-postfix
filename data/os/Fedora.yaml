@@ -1,4 +1,5 @@
 ---
+# corresponds with Fedora 36
 postfix::alias_maps:
   - hash:/etc/aliases
 postfix::compatibility_level: 3.6
