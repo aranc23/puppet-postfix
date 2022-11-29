@@ -2,7 +2,7 @@
 # corresponds with Fedora 36
 postfix::alias_maps:
   - hash:/etc/aliases
-postfix::compatibility_level: 3.6
+postfix::compatibility_level: '3.6'
 postfix::debugger_command: PATH=/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin ddd $daemon_directory/$process_name $process_id & sleep 5
 postfix::inet_interfaces: localhost
 postfix::mailq_path: /usr/bin/mailq.postfix
