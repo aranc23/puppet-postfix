@@ -3,7 +3,7 @@ postfix::alias_maps:
   - hash:/etc/aliases
 postfix::append_dot_mydomain: no
 postfix::biff: no
-postfix::compatibility_level: '<3.6'
+postfix::compatibility_level: '2'
 postfix::mailbox_size_limit: '0'
 postfix::myorigin: /etc/mailname
 postfix::readme_directory: no
